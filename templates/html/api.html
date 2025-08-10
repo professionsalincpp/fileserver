@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Material Design for Bootstrap</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Mobile support -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Material Design fonts -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Material Design -->
+  <link href="dist/css/bootstrap-material-design.css" rel="stylesheet">
+  <link href="dist/css/ripples.min.css" rel="stylesheet">
+
+  <!-- Dropdown.js -->
+  <link href="//cdn.rawgit.com/FezVrasta/dropdown.js/master/jquery.dropdown.css" rel="stylesheet">
+
+  <!-- Page style -->
+  <link href="index.css" rel="stylesheet">
+
+  <!-- jQuery -->
+  <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="/dist/js/listfiles.js"></script>
+
+</head>
+<body>
+
+<a href="https://github.com/FezVrasta/bootstrap-material-design" style="position: absolute; top: 0; right: 0; border: 0; z-index: 10;"><img src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+<div class="header-panel shadow-z-2">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-3">
+        <h1>List Files</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid main">
+  <div class="row">
+    <nav class="col-xs-3 menu">
+      <ul>
+        <li class="active withripple" onclick="window.location.href = '/'" data-target="#about">About</li>
+        <li class="withripple" onclick="window.location.href = '/viewdir'" data-target="#viewdir"><a href="/viewdir", style="width: 100%;">Storage</a></li>
+        <li class="withripple" data-target="#api"><a href="/api", style="width: 100%;">API</a></li>
+      </ul>
+    </nav>
+    <div class="pages col-xs-9">
+      <div class="row">
+        <div class="col-xs-10">
+          <div class="well page active" id="api">
+            <h1>API Requests</h1>
+
+            <p>This API supports the following requests:</p>
+
+            <h2>Requests</h2>
+
+            <ul>
+              <li><a href="#write">Write</a></li>
+              <li><a href="#read">Read</a></li>
+              <li><a href="#copy">Copy</a></li>
+              <li><a href="#move">Move</a></li>
+              <li><a href="#create-dir">Create Directory</a></li>
+              <li><a href="#create-file">Create File</a></li>
+              <li><a href="#simple-read-file">Simple Read File</a></li>
+            </ul>
+
+            <div class="request" id="simple-read-file">
+              <h2>Simple Read File</h2>
+              <div class="request-line get">
+                <span class="http-method get">GET</span> file HTTP/1.1
+              </div>
+              <p>Read a file.</p>
+              <table>
+                <tr>
+                  <th class="parameter">Parameter</th>
+                  <th class="type">Type</th>
+                  <th class="description">Description</th>
+                </tr>
+                <tr>
+                  <td>path</td>
+                  <td class="type">uri</td>
+                  <td class="description">The path to the file to read from.</td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="request" id="write">
+              <h2>Write</h2>
+              <div class="request-line put">
+                <span class="http-method put">PUT</span> api/write HTTP/1.1
+              </div>
+              <p>Write data to a file.</p>
+              <table>
+                <tr>
+                  <th class="parameter">Parameter</th>
+                  <th class="type">Type</th>
+                  <th class="description">Description</th>
+                </tr>
+                <tr>
+                  <td>path</td>
+                  <td class="type">string</td>
+                  <td class="description">The path to the file to write to.</td>
+                </tr>
+                <tr>
+                  <td>data</td>
+                  <td class="type">string</td>
+                  <td class="description">The data to write to the file.</td>
+                </tr>
+                <tr>
+                  <td>hash</td>
+                  <td class="type">string</td>
+                  <td class="description">The hash of the data to write.</td>
+                </tr>
+              </table>
+            </div>
+            <div class="request" id="read">
+              <h2>Read</h2>
+              <div class="request-line post">
+                <span class="http-method post">POST</span> api/read HTTP/1.1
+              </div>
+              <p>Read data from a file.</p>
+              <table>
+                <tr>
+                  <th class="parameter">Parameter</th>
+                  <th class="type">Type</th>
+                  <th class="description">Description</th>
+                </tr>
+                <tr>
+                  <td>path</td>
+                  <td class="type">string</td>
+                  <td class="description">The path to the file to read from.</td>
+                </tr>
+              </table>
+            </div>
+            <div class="request" id="copy">
+              <h2>Copy</h2>
+              <div class="request-line put">
+                <span class="http-method put">POST</span> api/copy HTTP/1.1
+              </div>
+              <p>Copy a file.</p>
+              <table>
+                <tr>
+                  <th class="parameter">Parameter</th>
+                  <th class="type">Type</th>
+                  <th class="description">Description</th>
+                </tr>
+                <tr>
+                  <td>path.source</td>
+                  <td class="type">string</td>
+                  <td class="description">The path to the file to copy from.</td>
+                </tr>
+                <tr>
+                  <td>path.destination</td>
+                  <td class="type">string</td>
+                  <td class="description">The path to the file to copy to.</td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="request" id="move">
+              <h2>Move</h2>
+              <div class="request-line put">
+                <span class="http-method put">POST</span> api/move HTTP/1.1
+              </div>
+              <p>Move a file.</p>
+              <table>
+                <tr>
+                  <th class="parameter">Parameter</th>
+                  <th class="type">Type</th>
+                  <th class="description">Description</th>
+                </tr>
+                <tr>
+                  <td>path.source</td>
+                  <td class="type">string</td>
+                  <td class="description">The path to the file to move from.</td>
+                </tr>
+                <tr>
+                  <td>path.destination</td>
+                  <td class="type">string</td>
+                  <td class="description">The path to the file to move to.</td>
+                </tr>
+              </table>
+            </div>
+            <div class="request" id="create-dir">
+              <h2>Create Directory</h2>
+              <div class="request-line post">
+                <span class="http-method post">POST</span> api/create/dir HTTP/1.1
+              </div>
+              <p>Create a directory.</p>
+              <table>
+                <tr>
+                  <th class="parameter">Parameter</th>
+                  <th class="type">Type</th>
+                  <th class="description">Description</th>
+                  </tr>
+                  <tr>
+                    <td>path</td>
+                    <td class="type">string</td>
+                    <td class="description">The path to the directory to create.</td>
+                  </tr>
+
+              </table>
+            </div>
+            <div class="request" id="create-file">
+              <h2>Create File</h2>
+              <div class="request-line post">
+                <span class="http-method post">POST</span> api/create/file HTTP/1.1
+              </div>
+              <p>Create a file.</p>
+              <table>
+                <tr>
+                  <th class="parameter">Parameter</th>
+                  <th class="type">Type</th>
+                  <th class="description">Description</th>
+                </tr>
+                <tr>
+                  <td>path</td>
+                  <td class="type">string</td>
+                  <td class="description">The path to the file to create.</td>
+                </tr>
+              </table>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- Open source code -->
+<script>
+
+  $(document).ready(function () {
+    if (window.page != "#api") {
+
+      var page = $(".menu").find("li[data-target=" + "#api" + "]").trigger("click");
+    }
+  });
+
+  $(window).on("resize", function () {
+    $("html, body").height($(window).height());
+    $(".main, .menu").height($(window).height() - $(".header-panel").outerHeight());
+    $(".pages").height($(window).height());
+  }).trigger("resize");
+
+  $(".menu li").click(function () {
+    // Menu
+    if (!$(this).data("target")) return;
+    if ($(this).is(".active")) return;
+    $(".menu li").not($(this)).removeClass("active");
+    $(".page").not(page).removeClass("active").hide();
+    window.page = $(this).data("target");
+    var page = $(window.page);
+    window.location.hash = window.page;
+    
+    $(this).addClass("active");
+
+
+    page.show();
+
+    var totop = setInterval(function () {
+      $(".pages").animate({scrollTop: 0}, 0);
+    }, 1);
+
+    setTimeout(function () {
+      page.addClass("active");
+      setTimeout(function () {
+        clearInterval(totop);
+      }, 1000);
+    }, 100);
+  });
+
+  function cleanSource(html) {
+    var lines = html.split(/\n/);
+
+    lines.shift();
+    lines.splice(-1, 1);
+
+    var indentSize = lines[0].length - lines[0].trim().length,
+        re = new RegExp(" {" + indentSize + "}");
+
+    lines = lines.map(function (line) {
+      if (line.match(re)) {
+        line = line.substring(indentSize);
+      }
+
+      return line;
+    });
+
+    lines = lines.join("\n");
+
+    return lines;
+  }
+
+</script>
+
+<!-- Twitter Bootstrap -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Material Design for Bootstrap -->
+<script src="dist/js/material.js"></script>
+<script src="dist/js/ripples.min.js"></script>
+<script>
+  $.material.init();
+</script>
+
+
+<!-- Sliders -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/noUiSlider/6.2.0/jquery.nouislider.min.js"></script>
+<script>
+  $(function () {
+    $.material.init();
+    $(".shor").noUiSlider({
+      start: 40,
+      connect: "lower",
+      range: {
+        min: 0,
+        max: 100
+      }
+    });
+
+    $(".svert").noUiSlider({
+      orientation: "vertical",
+      start: 40,
+      connect: "lower",
+      range: {
+        min: 0,
+        max: 100
+      }
+    });
+  });
+</script>
+
+<!-- Dropdown.js -->
+<script src="https://cdn.rawgit.com/FezVrasta/dropdown.js/master/jquery.dropdown.js"></script>
+<script>
+  $("#dropdown-menu select").dropdown();
+</script>
+
+</body>
+</html>

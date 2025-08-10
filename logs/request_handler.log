@@ -1,0 +1,292 @@
+request@info-[2025-08-10T22:22:22]:~$ Path: ['viewdir']
+request@info-[2025-08-10T22:22:22]:~$ Request: GET /viewdir HTTP/1.1
+request@info-[2025-08-10T22:22:22]:~$ Time: Sun, 10 Aug 2025 19:22:22 GMT
+request@info-[2025-08-10T22:22:22]:~$ Client IP: 192.168.1.4
+response@info-[2025-08-10T22:22:22]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:22]:~$ Path: ['dist', 'css', 'bootstrap-material-design.css']
+request@info-[2025-08-10T22:22:22]:~$ Path: ['dist', 'css', 'ripples.min.css']
+request@info-[2025-08-10T22:22:22]:~$ Request: GET /dist/css/bootstrap-material-design.css HTTP/1.1
+request@info-[2025-08-10T22:22:22]:~$ Path: ['dist', 'js', 'listfiles.js']
+request@info-[2025-08-10T22:22:22]:~$ Time: Sun, 10 Aug 2025 19:22:22 GMT
+request@info-[2025-08-10T22:22:22]:~$ Request: GET /dist/css/ripples.min.css HTTP/1.1
+request@info-[2025-08-10T22:22:22]:~$ Path: ['index.css']
+request@info-[2025-08-10T22:22:22]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:22]:~$ Request: GET /dist/js/listfiles.js HTTP/1.1
+request@info-[2025-08-10T22:22:22]:~$ Request: GET /index.css HTTP/1.1
+request@info-[2025-08-10T22:22:22]:~$ Path: ['dist', 'js', 'views', 'excel.js']
+response@info-[2025-08-10T22:22:22]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:22]:~$ Time: Sun, 10 Aug 2025 19:22:22 GMT
+request@info-[2025-08-10T22:22:22]:~$ Time: Sun, 10 Aug 2025 19:22:22 GMT
+request@info-[2025-08-10T22:22:22]:~$ Path: ['dist', 'js', 'viewfile.js']
+request@info-[2025-08-10T22:22:22]:~$ Time: Sun, 10 Aug 2025 19:22:22 GMT
+request@info-[2025-08-10T22:22:22]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:22]:~$ Request: GET /dist/js/views/excel.js HTTP/1.1
+request@info-[2025-08-10T22:22:22]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:22]:~$ Request: GET /dist/js/viewfile.js HTTP/1.1
+response@info-[2025-08-10T22:22:22]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:22]:~$ Time: Sun, 10 Aug 2025 19:22:22 GMT
+request@info-[2025-08-10T22:22:22]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:22]:~$ Time: Sun, 10 Aug 2025 19:22:22 GMT
+request@info-[2025-08-10T22:22:22]:~$ Path: ['xlsx.min.js']
+response@info-[2025-08-10T22:22:22]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:22]:~$ Client IP: 192.168.1.4
+response@info-[2025-08-10T22:22:22]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:22]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:22]:~$ Path: ['dist', 'js', 'material.js']
+request@info-[2025-08-10T22:22:22]:~$ Request: GET /xlsx.min.js HTTP/1.1
+response@info-[2025-08-10T22:22:22]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:22]:~$ Path: ['dist', 'js', 'ripples.min.js']
+request@info-[2025-08-10T22:22:22]:~$ Time: Sun, 10 Aug 2025 19:22:22 GMT
+request@info-[2025-08-10T22:22:22]:~$ Request: GET /dist/js/material.js HTTP/1.1
+request@info-[2025-08-10T22:22:22]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:22]:~$ Time: Sun, 10 Aug 2025 19:22:22 GMT
+request@info-[2025-08-10T22:22:22]:~$ Request: GET /dist/js/ripples.min.js HTTP/1.1
+response@info-[2025-08-10T22:22:22]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:22]:~$ Client IP: 192.168.1.4
+response@info-[2025-08-10T22:22:22]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:22]:~$ Time: Sun, 10 Aug 2025 19:22:22 GMT
+request@info-[2025-08-10T22:22:22]:~$ Client IP: 192.168.1.4
+response@info-[2025-08-10T22:22:22]:~$ Response: 200 [OK] -
+response@info-[2025-08-10T22:22:22]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:22]:~$ Path: ['img', 'file-directory.svg']
+request@info-[2025-08-10T22:22:22]:~$ Path: ['img', 'file.svg']
+request@info-[2025-08-10T22:22:22]:~$ Path: ['img', 'file-zip.svg']
+request@info-[2025-08-10T22:22:22]:~$ Path: ['img', 'file-directory-fill.svg']
+request@info-[2025-08-10T22:22:22]:~$ Path: ['img', 'file-media.svg']
+request@info-[2025-08-10T22:22:22]:~$ Request: GET /img/file.svg HTTP/1.1
+request@info-[2025-08-10T22:22:22]:~$ Request: GET /img/file-directory.svg HTTP/1.1
+request@info-[2025-08-10T22:22:22]:~$ Path: ['img', 'file-code.svg']
+request@info-[2025-08-10T22:22:22]:~$ Request: GET /img/file-zip.svg HTTP/1.1
+request@info-[2025-08-10T22:22:22]:~$ Time: Sun, 10 Aug 2025 19:22:22 GMT
+request@info-[2025-08-10T22:22:22]:~$ Time: Sun, 10 Aug 2025 19:22:22 GMT
+request@info-[2025-08-10T22:22:22]:~$ Request: GET /img/file-media.svg HTTP/1.1
+request@info-[2025-08-10T22:22:22]:~$ Request: GET /img/file-directory-fill.svg HTTP/1.1
+request@info-[2025-08-10T22:22:22]:~$ Request: GET /img/file-code.svg HTTP/1.1
+request@info-[2025-08-10T22:22:22]:~$ Time: Sun, 10 Aug 2025 19:22:22 GMT
+request@info-[2025-08-10T22:22:22]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:22]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:22]:~$ Time: Sun, 10 Aug 2025 19:22:22 GMT
+request@info-[2025-08-10T22:22:22]:~$ Time: Sun, 10 Aug 2025 19:22:22 GMT
+response@info-[2025-08-10T22:22:22]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:22]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:22]:~$ Time: Sun, 10 Aug 2025 19:22:22 GMT
+response@info-[2025-08-10T22:22:22]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:22]:~$ Client IP: 192.168.1.4
+response@info-[2025-08-10T22:22:22]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:22]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:22]:~$ Client IP: 192.168.1.4
+response@info-[2025-08-10T22:22:22]:~$ Response: 200 [OK] -
+response@info-[2025-08-10T22:22:22]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:22]:~$ Path: ['img', 'file-badge.svg']
+response@info-[2025-08-10T22:22:22]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:22]:~$ Request: GET /img/file-badge.svg HTTP/1.1
+request@info-[2025-08-10T22:22:22]:~$ Path: ['img', 'file-binary.svg']
+request@info-[2025-08-10T22:22:22]:~$ Time: Sun, 10 Aug 2025 19:22:22 GMT
+request@info-[2025-08-10T22:22:22]:~$ Path: ['favicon.ico']
+request@info-[2025-08-10T22:22:22]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:22]:~$ Request: GET /img/file-binary.svg HTTP/1.1
+request@info-[2025-08-10T22:22:22]:~$ Path: ['list', 'dir', '']
+response@info-[2025-08-10T22:22:22]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:22]:~$ Time: Sun, 10 Aug 2025 19:22:22 GMT
+request@info-[2025-08-10T22:22:22]:~$ Request: GET /favicon.ico HTTP/1.1
+request@info-[2025-08-10T22:22:22]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:22]:~$ Time: Sun, 10 Aug 2025 19:22:22 GMT
+response@info-[2025-08-10T22:22:22]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:22]:~$ Client IP: 192.168.1.4
+response@info-[2025-08-10T22:22:22]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:22]:~$ Request: GET /list/dir/ HTTP/1.1
+request@info-[2025-08-10T22:22:22]:~$ Time: Sun, 10 Aug 2025 19:22:22 GMT
+request@info-[2025-08-10T22:22:22]:~$ Client IP: 192.168.1.4
+response@info-[2025-08-10T22:22:22]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:25]:~$ Path: ['viewdir']
+request@info-[2025-08-10T22:22:25]:~$ Request: GET /viewdir?path=app.py HTTP/1.1
+request@info-[2025-08-10T22:22:25]:~$ Time: Sun, 10 Aug 2025 19:22:25 GMT
+request@info-[2025-08-10T22:22:25]:~$ Client IP: 192.168.1.4
+response@info-[2025-08-10T22:22:25]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:25]:~$ Path: ['dist', 'css', 'bootstrap-material-design.css']
+request@info-[2025-08-10T22:22:25]:~$ Request: GET /dist/css/bootstrap-material-design.css HTTP/1.1
+request@info-[2025-08-10T22:22:25]:~$ Time: Sun, 10 Aug 2025 19:22:25 GMT
+request@info-[2025-08-10T22:22:25]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:25]:~$ Path: ['dist', 'css', 'ripples.min.css']
+response@info-[2025-08-10T22:22:25]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:25]:~$ Request: GET /dist/css/ripples.min.css HTTP/1.1
+request@info-[2025-08-10T22:22:25]:~$ Path: ['dist', 'js', 'listfiles.js']
+request@info-[2025-08-10T22:22:25]:~$ Path: ['dist', 'js', 'views', 'excel.js']
+request@info-[2025-08-10T22:22:25]:~$ Path: ['dist', 'js', 'viewfile.js']
+request@info-[2025-08-10T22:22:25]:~$ Path: ['xlsx.min.js']
+request@info-[2025-08-10T22:22:25]:~$ Time: Sun, 10 Aug 2025 19:22:25 GMT
+request@info-[2025-08-10T22:22:25]:~$ Request: GET /dist/js/listfiles.js HTTP/1.1
+request@info-[2025-08-10T22:22:25]:~$ Request: GET /dist/js/viewfile.js HTTP/1.1
+request@info-[2025-08-10T22:22:25]:~$ Request: GET /dist/js/views/excel.js HTTP/1.1
+request@info-[2025-08-10T22:22:25]:~$ Request: GET /xlsx.min.js HTTP/1.1
+request@info-[2025-08-10T22:22:25]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:25]:~$ Time: Sun, 10 Aug 2025 19:22:25 GMT
+request@info-[2025-08-10T22:22:25]:~$ Time: Sun, 10 Aug 2025 19:22:25 GMT
+request@info-[2025-08-10T22:22:25]:~$ Time: Sun, 10 Aug 2025 19:22:25 GMT
+request@info-[2025-08-10T22:22:25]:~$ Path: ['index.css']
+response@info-[2025-08-10T22:22:25]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:25]:~$ Time: Sun, 10 Aug 2025 19:22:25 GMT
+request@info-[2025-08-10T22:22:25]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:25]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:25]:~$ Client IP: 192.168.1.4
+response@info-[2025-08-10T22:22:25]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:25]:~$ Client IP: 192.168.1.4
+response@info-[2025-08-10T22:22:25]:~$ Response: 200 [OK] -
+response@info-[2025-08-10T22:22:25]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:25]:~$ Request: GET /index.css HTTP/1.1
+response@info-[2025-08-10T22:22:25]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:25]:~$ Path: ['dist', 'js', 'material.js']
+request@info-[2025-08-10T22:22:25]:~$ Time: Sun, 10 Aug 2025 19:22:25 GMT
+request@info-[2025-08-10T22:22:25]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:25]:~$ Request: GET /dist/js/material.js HTTP/1.1
+response@info-[2025-08-10T22:22:25]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:25]:~$ Path: ['dist', 'js', 'ripples.min.js']
+request@info-[2025-08-10T22:22:25]:~$ Time: Sun, 10 Aug 2025 19:22:25 GMT
+request@info-[2025-08-10T22:22:25]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:25]:~$ Request: GET /dist/js/ripples.min.js HTTP/1.1
+response@info-[2025-08-10T22:22:25]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:25]:~$ Time: Sun, 10 Aug 2025 19:22:25 GMT
+request@info-[2025-08-10T22:22:25]:~$ Client IP: 192.168.1.4
+response@info-[2025-08-10T22:22:25]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:25]:~$ Path: ['img', 'file-directory.svg']
+request@info-[2025-08-10T22:22:25]:~$ Request: GET /img/file-directory.svg HTTP/1.1
+request@info-[2025-08-10T22:22:25]:~$ Time: Sun, 10 Aug 2025 19:22:25 GMT
+request@info-[2025-08-10T22:22:25]:~$ Client IP: 192.168.1.4
+response@info-[2025-08-10T22:22:25]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:25]:~$ Path: ['img', 'file.svg']
+request@info-[2025-08-10T22:22:25]:~$ Path: ['img', 'file-media.svg']
+request@info-[2025-08-10T22:22:25]:~$ Path: ['img', 'file-zip.svg']
+request@info-[2025-08-10T22:22:25]:~$ Path: ['img', 'file-directory-fill.svg']
+request@info-[2025-08-10T22:22:25]:~$ Path: ['img', 'file-code.svg']
+request@info-[2025-08-10T22:22:25]:~$ Path: ['img', 'file-badge.svg']
+request@info-[2025-08-10T22:22:25]:~$ Request: GET /img/file.svg HTTP/1.1
+request@info-[2025-08-10T22:22:25]:~$ Request: GET /img/file-media.svg HTTP/1.1
+request@info-[2025-08-10T22:22:25]:~$ Request: GET /img/file-directory-fill.svg HTTP/1.1
+request@info-[2025-08-10T22:22:25]:~$ Time: Sun, 10 Aug 2025 19:22:25 GMT
+request@info-[2025-08-10T22:22:25]:~$ Time: Sun, 10 Aug 2025 19:22:25 GMT
+request@info-[2025-08-10T22:22:25]:~$ Time: Sun, 10 Aug 2025 19:22:25 GMT
+request@info-[2025-08-10T22:22:25]:~$ Request: GET /img/file-zip.svg HTTP/1.1
+request@info-[2025-08-10T22:22:25]:~$ Request: GET /img/file-badge.svg HTTP/1.1
+request@info-[2025-08-10T22:22:25]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:25]:~$ Request: GET /img/file-code.svg HTTP/1.1
+request@info-[2025-08-10T22:22:25]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:25]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:25]:~$ Time: Sun, 10 Aug 2025 19:22:25 GMT
+request@info-[2025-08-10T22:22:25]:~$ Time: Sun, 10 Aug 2025 19:22:25 GMT
+response@info-[2025-08-10T22:22:25]:~$ Response: 200 [OK] -
+response@info-[2025-08-10T22:22:25]:~$ Response: 200 [OK] -
+response@info-[2025-08-10T22:22:25]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:25]:~$ Time: Sun, 10 Aug 2025 19:22:25 GMT
+request@info-[2025-08-10T22:22:25]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:25]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:25]:~$ Client IP: 192.168.1.4
+response@info-[2025-08-10T22:22:25]:~$ Response: 200 [OK] -
+response@info-[2025-08-10T22:22:25]:~$ Response: 200 [OK] -
+response@info-[2025-08-10T22:22:25]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:25]:~$ Path: ['img', 'file-binary.svg']
+request@info-[2025-08-10T22:22:25]:~$ Path: ['list', 'dir', 'app.py']
+request@info-[2025-08-10T22:22:25]:~$ Request: GET /img/file-binary.svg HTTP/1.1
+request@info-[2025-08-10T22:22:25]:~$ Request: GET /list/dir/app.py HTTP/1.1
+request@info-[2025-08-10T22:22:25]:~$ Time: Sun, 10 Aug 2025 19:22:25 GMT
+request@info-[2025-08-10T22:22:25]:~$ Time: Sun, 10 Aug 2025 19:22:25 GMT
+request@info-[2025-08-10T22:22:25]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:25]:~$ Client IP: 192.168.1.4
+response@info-[2025-08-10T22:22:25]:~$ Response: 200 [OK] -
+response@info-[2025-08-10T22:22:25]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:25]:~$ Request: POST /api/read HTTP/1.1
+request@info-[2025-08-10T22:22:25]:~$ Time: Sun, 10 Aug 2025 19:22:25 GMT
+request@info-[2025-08-10T22:22:25]:~$ Client IP: 192.168.1.4
+response@info-[2025-08-10T22:22:25]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:50]:~$ Path: ['viewdir']
+request@info-[2025-08-10T22:22:50]:~$ Request: GET /viewdir HTTP/1.1
+request@info-[2025-08-10T22:22:50]:~$ Time: Sun, 10 Aug 2025 19:22:50 GMT
+request@info-[2025-08-10T22:22:50]:~$ Client IP: 192.168.1.4
+response@info-[2025-08-10T22:22:50]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:50]:~$ Path: ['dist', 'css', 'bootstrap-material-design.css']
+request@info-[2025-08-10T22:22:50]:~$ Path: ['dist', 'css', 'ripples.min.css']
+request@info-[2025-08-10T22:22:50]:~$ Path: ['dist', 'js', 'views', 'excel.js']
+request@info-[2025-08-10T22:22:50]:~$ Request: GET /dist/css/ripples.min.css HTTP/1.1
+request@info-[2025-08-10T22:22:50]:~$ Request: GET /dist/css/bootstrap-material-design.css HTTP/1.1
+request@info-[2025-08-10T22:22:50]:~$ Path: ['dist', 'js', 'listfiles.js']
+request@info-[2025-08-10T22:22:50]:~$ Request: GET /dist/js/views/excel.js HTTP/1.1
+request@info-[2025-08-10T22:22:50]:~$ Request: GET /dist/js/viewfile.js HTTP/1.1
+request@info-[2025-08-10T22:22:50]:~$ Path: ['index.css']
+request@info-[2025-08-10T22:22:50]:~$ Time: Sun, 10 Aug 2025 19:22:50 GMT
+request@info-[2025-08-10T22:22:50]:~$ Time: Sun, 10 Aug 2025 19:22:50 GMT
+request@info-[2025-08-10T22:22:50]:~$ Request: GET /dist/js/listfiles.js HTTP/1.1
+request@info-[2025-08-10T22:22:50]:~$ Time: Sun, 10 Aug 2025 19:22:50 GMT
+request@info-[2025-08-10T22:22:50]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:50]:~$ Client IP: 192.168.1.4
+response@info-[2025-08-10T22:22:50]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:50]:~$ Client IP: 192.168.1.4
+response@info-[2025-08-10T22:22:50]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:50]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:50]:~$ Request: GET /index.css HTTP/1.1
+request@info-[2025-08-10T22:22:50]:~$ Time: Sun, 10 Aug 2025 19:22:50 GMT
+response@info-[2025-08-10T22:22:50]:~$ Response: 200 [OK] -
+response@info-[2025-08-10T22:22:50]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:50]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:50]:~$ Time: Sun, 10 Aug 2025 19:22:50 GMT
+request@info-[2025-08-10T22:22:50]:~$ Path: ['xlsx.min.js']
+response@info-[2025-08-10T22:22:50]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:50]:~$ Request: GET /xlsx.min.js HTTP/1.1
+request@info-[2025-08-10T22:22:50]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:50]:~$ Path: ['dist', 'js', 'material.js']
+request@info-[2025-08-10T22:22:50]:~$ Time: Sun, 10 Aug 2025 19:22:50 GMT
+response@info-[2025-08-10T22:22:50]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:50]:~$ Path: ['dist', 'js', 'ripples.min.js']
+request@info-[2025-08-10T22:22:50]:~$ Client IP: 192.168.1.4
+response@info-[2025-08-10T22:22:50]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:50]:~$ Request: GET /dist/js/ripples.min.js HTTP/1.1
+request@info-[2025-08-10T22:22:50]:~$ Request: GET /dist/js/material.js HTTP/1.1
+request@info-[2025-08-10T22:22:50]:~$ Time: Sun, 10 Aug 2025 19:22:50 GMT
+request@info-[2025-08-10T22:22:50]:~$ Time: Sun, 10 Aug 2025 19:22:50 GMT
+request@info-[2025-08-10T22:22:50]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:50]:~$ Client IP: 192.168.1.4
+response@info-[2025-08-10T22:22:50]:~$ Response: 200 [OK] -
+response@info-[2025-08-10T22:22:50]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:50]:~$ Path: ['img', 'file-directory.svg']
+request@info-[2025-08-10T22:22:50]:~$ Path: ['img', 'file.svg']
+request@info-[2025-08-10T22:22:50]:~$ Path: ['img', 'file-media.svg']
+request@info-[2025-08-10T22:22:50]:~$ Path: ['img', 'file-zip.svg']
+request@info-[2025-08-10T22:22:50]:~$ Path: ['img', 'file-directory-fill.svg']
+request@info-[2025-08-10T22:22:50]:~$ Request: GET /img/file-directory.svg HTTP/1.1
+request@info-[2025-08-10T22:22:50]:~$ Path: ['img', 'file-code.svg']
+request@info-[2025-08-10T22:22:50]:~$ Request: GET /img/file.svg HTTP/1.1
+request@info-[2025-08-10T22:22:50]:~$ Time: Sun, 10 Aug 2025 19:22:50 GMT
+request@info-[2025-08-10T22:22:50]:~$ Time: Sun, 10 Aug 2025 19:22:50 GMT
+request@info-[2025-08-10T22:22:50]:~$ Request: GET /img/file-zip.svg HTTP/1.1
+request@info-[2025-08-10T22:22:50]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:50]:~$ Time: Sun, 10 Aug 2025 19:22:50 GMT
+request@info-[2025-08-10T22:22:50]:~$ Request: GET /img/file-media.svg HTTP/1.1
+request@info-[2025-08-10T22:22:50]:~$ Request: GET /img/file-code.svg HTTP/1.1
+request@info-[2025-08-10T22:22:50]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:50]:~$ Request: GET /img/file-directory-fill.svg HTTP/1.1
+response@info-[2025-08-10T22:22:50]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:50]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:50]:~$ Time: Sun, 10 Aug 2025 19:22:50 GMT
+response@info-[2025-08-10T22:22:50]:~$ Response: 200 [OK] -
+19:22:50 GMT
+request@info-[2025-08-10T22:22:50]:~$ Time: Sun, 10 Aug 2025 19:22:50 GMT
+response@info-[2025-08-10T22:22:50]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:50]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:50]:~$ Client IP: 192.168.1.4
+response@info-[2025-08-10T22:22:50]:~$ Response: 200 [OK] -
+response@info-[2025-08-10T22:22:50]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:50]:~$ Client IP: 192.168.1.4
+e.svg']
+request@info-[2025-08-10T22:22:50]:~$ Path: ['img', 'file-binary.svg']
+response@info-[2025-08-10T22:22:50]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:50]:~$ Request: GET /img/file-badge.svg HTTP/1.1
+request@info-[2025-08-10T22:22:50]:~$ Path: ['list', 'dir', '']
+request@info-[2025-08-10T22:22:50]:~$ Time: Sun, 10 Aug 2025 19:22:50 GMT
+request@info-[2025-08-10T22:22:50]:~$ Request: GET /img/file-binary.svg HTTP/1.1
+request@info-[2025-08-10T22:22:50]:~$ Client IP: 192.168.1.4
+request@info-[2025-08-10T22:22:50]:~$ Time: Sun, 10 Aug 2025 19:22:50 GMT
+response@info-[2025-08-10T22:22:50]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:50]:~$ Client IP: 192.168.1.4
+response@info-[2025-08-10T22:22:50]:~$ Response: 200 [OK] -
+request@info-[2025-08-10T22:22:50]:~$ Request: GET /list/dir/ HTTP/1.1
+request@info-[2025-08-10T22:22:50]:~$ Time: Sun, 10 Aug 2025 19:22:50 GMT
+request@info-[2025-08-10T22:22:50]:~$ Client IP: 192.168.1.4
+response@info-[2025-08-10T22:22:50]:~$ Response: 200 [OK] -

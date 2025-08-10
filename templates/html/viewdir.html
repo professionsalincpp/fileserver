@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Material Design for Bootstrap</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Mobile support -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Material Design fonts -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Material Design -->
+  <link href="dist/css/bootstrap-material-design.css" rel="stylesheet">
+  <link href="dist/css/ripples.min.css" rel="stylesheet">
+
+  <!-- Dropdown.js -->
+  <link href="//cdn.rawgit.com/FezVrasta/dropdown.js/master/jquery.dropdown.css" rel="stylesheet">
+
+  <!-- Page style -->
+  
+  <!-- jQuery -->
+  <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
+  <script src="/dist/js/listfiles.js"></script>
+   <script src="/dist/js/views/excel.js"></script>
+  <script src="/dist/js/viewfile.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/markdown-it@12.0.4/dist/markdown-it.min.js"></script>
+  <script src="xlsx.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/java.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/ini.min.js" integrity="sha512-7OGJTjLbP6mkGuHzs279+Y3WoqYLiB+pdYYabyUq6H2jnm2jFpg4NSiXQwc4RL2GTi1tQd2LyQVrmEmrNxaalw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/json.min.js" integrity="sha512-f2/ljYb/tG4fTHu6672tyNdoyhTIpt4N1bGrBE8ZjwIgrjDCd+rljLpWCZ2Vym9PBWQy2Tl9O22Pp2rMOMvH4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/markdown.min.js" integrity="sha512-j4HfSOGvYNRQiq8wvftDi9oVmhSqJuh2dALD+Btn53looHt+e1aaNX9gcQsnUAi42694fFhmmU4fx8nzs6VN7Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/cpp.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/xml.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.9.0/dist/highlightjs-line-numbers.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.9.0/highlightjs-line-numbers.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-base64@2.6.4/base64.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github.min.css">
+  <link href="index.css" rel="stylesheet">
+  
+</head>
+<body>
+  
+  <!-- <a href="https://github.com/FezVrasta/bootstrap-material-design" style="position: absolute; top: 0; right: 0; border: 0; z-index: 10;"><img src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a> -->
+  <div id="uploadModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Upload File</h4>
+        </div>
+        <div class="modal-body">
+          <!-- Upload file button -->
+          <input type="file" id="uploadfileinput" name="uploadfile" />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="uploadbtn" onclick="uploadFile()">Upload</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header-panel shadow-z-2">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-3">
+          <h1>List Files</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid main">
+    <div id="message-container"></div>
+    <div class="row">
+      <nav class="col-xs-3 menu">
+        <ul>
+          <li class="active withripple" onclick="window.location.href = '/'" data-target="#about">About</li>
+          <li class="withripple" data-target="#viewdir"><a href="/viewdir", style="width: 100%;">Storage</a></li>
+          <li class="withripple" onclick="window.location.href = '/api'" data-target="/api"><a href="/api", style="width: 100%;">API</a></li>
+        </ul>
+      </nav>
+    </div>
+  <div class="pages col-xs-9">
+      <div class="row">
+        <div class="col-xs-10">
+          <div id="viewdir" class="well page active">
+            <div id="toolbar">
+              <h2 style="margin: 0; margin-right: 10px;">Storage</h2>
+              <button class="btn btn-primary md-button" id="uploadbtn1" data-toggle="modal" data-target="#uploadModal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#009587"><path d="M4 20.25V18a.75.75 0 0 1 1.5 0v2.25c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V18a.75.75 0 0 1 1.5 0v2.25A1.75 1.75 0 0 1 18.25 22H5.75A1.75 1.75 0 0 1 4 20.25Z"></path><path d="M5.22 9.53a.749.749 0 0 1 0-1.06l6.25-6.25a.749.749 0 0 1 1.06 0l6.25 6.25a.749.749 0 1 1-1.06 1.06l-4.97-4.969V16.75a.75.75 0 0 1-1.5 0V4.561L6.28 9.53a.749.749 0 0 1-1.06 0Z"></path></svg>
+                <span style="width: 100%;">Upload</span></button>
+            </div>
+
+            <div class="list-group" id="filesul"></div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Open source code -->
+<script>
+
+  $(document).ready(function () {
+    if (window.page != "#viewdir") {
+      $(".menu").find("li[data-target=" + "#viewdir" + "]").trigger("click");
+    }
+  });
+
+  $(window).on("resize", function () {
+    $("html, body").height($(window).height());
+    $(".main, .menu").height($(window).height() - $(".header-panel").outerHeight());
+    $(".pages").height($(window).height());
+  }).trigger("resize");
+
+  $(".menu li").click(function () {
+    // Menu
+    if (!$(this).data("target")) return;
+    if ($(this).is(".active")) return;
+    $(".menu li").not($(this)).removeClass("active");
+    $(".page").not(page).removeClass("active").hide();
+    window.page = $(this).data("target");
+    var page = $(window.page);
+    window.location.hash = window.page;
+    $(this).addClass("active");
+
+
+    page.show();
+
+    var totop = setInterval(function () {
+      $(".pages").animate({scrollTop: 0}, 0);
+    }, 1);
+
+    setTimeout(function () {
+      page.addClass("active");
+      setTimeout(function () {
+        clearInterval(totop);
+      }, 1000);
+    }, 100);
+  });
+
+  function cleanSource(html) {
+    var lines = html.split(/\n/);
+
+    lines.shift();
+    lines.splice(-1, 1);
+
+    var indentSize = lines[0].length - lines[0].trim().length,
+        re = new RegExp(" {" + indentSize + "}");
+
+    lines = lines.map(function (line) {
+      if (line.match(re)) {
+        line = line.substring(indentSize);
+      }
+
+      return line;
+    });
+
+    lines = lines.join("\n");
+
+    return lines;
+  }
+
+  $("#opensource").click(function () {
+    $.get(window.location.href, function (data) {
+      var html = $(data).find(window.page).html();
+      html = cleanSource(html);
+      $("#source-modal pre").text(html);
+      $("#source-modal").modal();
+    });
+  });
+</script>
+
+<!-- Twitter Bootstrap -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Material Design for Bootstrap -->
+<script src="dist/js/material.js"></script>
+<script src="dist/js/ripples.min.js"></script>
+<script>
+  $.material.init();
+</script>
+
+
+<!-- Sliders -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/noUiSlider/6.2.0/jquery.nouislider.min.js"></script>
+<script>
+  $(function () {
+    $.material.init();
+    $(".shor").noUiSlider({
+      start: 40,
+      connect: "lower",
+      range: {
+        min: 0,
+        max: 100
+      }
+    });
+
+    $(".svert").noUiSlider({
+      orientation: "vertical",
+      start: 40,
+      connect: "lower",
+      range: {
+        min: 0,
+        max: 100
+      }
+    });
+  });
+</script>
+
+<!-- Dropdown.js -->
+<script src="https://cdn.rawgit.com/FezVrasta/dropdown.js/master/jquery.dropdown.js"></script>
+<script>
+  $("#dropdown-menu select").dropdown();
+</script>
+
+</body>
+</html>
