@@ -38,6 +38,13 @@ class Sender:
                     json=data
                 )
                 return response
+            if method == http.HTTPMethod.DELETE:
+                response = requests.delete(
+                    url,
+                    headers=request_headers,
+                    json=data
+                )
+                return response
         except Exception as e:
             cls.handle_error(e)
 

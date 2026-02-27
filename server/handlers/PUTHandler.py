@@ -12,7 +12,7 @@ from logservices.logger import MultiLogger
 from config import Config
 from fileservices.fileworker import FileWorker
 from policyservices.policyworker import PolicyWorker
-from utils.path import get_correct_path
+from utils.pathutils import get_correct_path
 from handlers.BaseHandler import BaseHandler
 from fileservices.encoder import Encoder
 
@@ -44,9 +44,41 @@ class PUTHandler(BaseHandler):
             return cls.processmove(body)
         if path == ["write"]:
             return cls.processwrite(body)
+        if path == ["rename"]:
+            return cls.processrename(body)        
         
         _logger.error("Unknown path", context="puthandler")
         return cls.wrap_error(404, "Not Found", f"Method not found for path \"{path}\"")
+    
+
+    @classmethod
+    def processrename(cls, body: Dict[str, str]) -> Response:
+        file_path_old: str = body["path"]["old"]
+        if file_path_old == body["path"]["new"]:
+            if file_path_old == "/":
+                return cls.wrap_error(400, "Bad Request", "Cannot rename root directory")
+            else:
+                return cls.wrap_error(400, "Bad Request", "Cannot rename to the same path")
+        file_path_new: str = body["path"]["new"]
+        file_path_old = get_correct_path(Config.get_config()["path"]["data"], file_path_old)
+        file_path_new = get_correct_path(Config.get_config()["path"]["data"], file_path_new)
+        body["path"]["old"] = file_path_old
+        body["path"]["new"] = file_path_new
+        
+        policyworker = PolicyWorker(Config.get_config()["path"]["data"], body, PolicyWorkerMode.CHECK_RENAME_PERMISSIONS)
+        policyworker.run()
+        msg = policyworker.get_result().data.getvalue()
+        if policyworker.get_result().status != PolicyWorkerStatus.ALLOWED:
+            return cls.wrap_error(403, "Forbidden", msg.decode())
+
+        fileworker = FileWorker({"old": file_path_old, "new": file_path_new}, FileWorkerMode.RENAME)
+        fileworker.run()
+        if fileworker.get_result().status == FileWorkerStatus.SUCCESS:
+            return cls.wrap_success(200, "File renamed successfully")
+        if fileworker.get_result().status == FileWorkerStatus.NOT_FOUND:
+            return cls.wrap_error(404, "File not found", fileworker.get_result().data.getvalue().decode())
+        else:
+            return cls.wrap_error(500, "Something went wrong", fileworker.get_result().data.getvalue().decode())
     
     @classmethod
     def processwrite(cls, body: Dict[str, str]) -> Response:
@@ -56,11 +88,6 @@ class PUTHandler(BaseHandler):
         mimetype = extendedmimes.guess_mimetype(filepath)
         actual_data = Encoder.encode(data, mimetype)
         # bytes_data = actual_data.encode("utf-8")
-        print(f"Mimetype: {mimetype}")
-        print(f"Actual data: {actual_data[:30]}")
-        print(f"Decoded data: {data[:30]}")
-        print(f"Hash: {data_hash}")
-        # print(f"Bytes data: {bytes_data[:30]}")
         if not APIChecker.check_data_integrity(data.encode("utf-8"), data_hash):
             _logger.error("Data integrity check failed")
             return cls.wrap_error(400, "Bad Request", "Data integrity check failed")
@@ -118,13 +145,14 @@ class PUTHandler(BaseHandler):
         policyworker.run()
         msg = policyworker.get_result().data.getvalue()
         if policyworker.get_result().status != PolicyWorkerStatus.ALLOWED:
-            return Response(msg, 403)
+            return cls.wrap_error(403, "Forbidden", msg.decode())
         
         fileworker = FileWorker(paths, FileWorkerMode.MOVE)
         fileworker.run()
         if fileworker.get_result().status == FileWorkerStatus.SUCCESS:
-            msg = cls.wrap_success(200, "File moved successfully")
+            return cls.wrap_success(200, "File moved successfully")
         if fileworker.get_result().status == FileWorkerStatus.NOT_FOUND:
-            msg = cls.wrap_error(404, "File not found", fileworker.get_result().data.getvalue().decode())
+            return cls.wrap_error(404, "File not found", fileworker.get_result().data.getvalue().decode())
         else:
+
             return cls.wrap_error(500, "Something went wrong", fileworker.get_result().data.getvalue().decode())

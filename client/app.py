@@ -47,7 +47,14 @@ def parse_args():
 
     download_parser = subparsers.add_parser("download", help="Download file")
     download_parser.add_argument("file", type=str, help="File to download")
-    
+
+    delete_parser = subparsers.add_parser("delete", help="Delete file")
+    delete_parser.add_argument("file", type=str, help="File or directory to delete")
+
+    rename_parser = subparsers.add_parser("rename", help="Rename file or directory")
+    rename_parser.add_argument("old_path", type=str, help="File or directory to rename")
+    rename_parser.add_argument("new_path", type=str, help="New name for file or directory")
+        
     print_config_parser = subparsers.add_parser("print_config", help="Prints the current configuration")
 
     return parser.parse_args()

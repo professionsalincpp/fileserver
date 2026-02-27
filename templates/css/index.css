@@ -1,0 +1,712 @@
+/* ========== ОБЩИЕ СТИЛИ (БЕЗ МЕДИАЗАПРОСОВ) ========== */
+* {
+    box-sizing: border-box;
+}
+
+.header-panel {
+    background-color: #009587;
+    height: 144px;
+    position: relative;
+    z-index: 3;
+}
+
+.header-panel div {
+    position: relative;
+    height: 100%;
+}
+
+.header-panel h1 {
+    color: #FFF;
+    position: absolute;
+    bottom: 10px;
+    padding-left: 35px;
+}
+
+.menu {
+    overflow: auto;
+    padding: 0;
+}
+
+.menu, .menu * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.menu ul {
+    padding: 0;
+    margin: 7px 0;
+}
+
+.menu ul li {
+    list-style: none;
+    padding: 20px 0 20px 50px;
+    font-size: 15px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.menu ul li.active {
+    background-color: #dedede;
+    position: relative;
+}
+
+.menu ul li a {
+    color: rgb(51, 51, 51);
+    text-decoration: none;
+}
+
+.pages {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 4;
+    padding: 0;
+    overflow: auto;
+}
+
+.pages > div {
+    padding: 0 5px;
+    padding-top: 64px;
+}
+
+.pages .header {
+    color: rgb(82, 101, 162);
+}
+
+.page {
+    transform: translateY(1080px);
+    transition: transform 0 linear;
+    display: none;
+    opacity: 0;
+    font-size: 16px;
+}
+
+.page.active {
+    transform: translateY(0px);
+    transition: all 0.3s ease-out;
+    display: block;
+    opacity: 1;
+}
+
+.opensource {
+    color: rgba(0, 0, 0, 0.62);
+    position: fixed;
+    margin-top: 50px;
+    margin-left: 50px;
+    z-index: 100;
+}
+
+#source-modal h4 {
+    color: black;
+}
+
+#paypal .btn {
+    padding: 5px 30px 6px 30px;
+}
+
+#paypal input {
+    background: transparent;
+    border: 0;
+}
+
+.cbwrapper div {
+    display: none;
+}
+
+.cbwrapper div:nth-child(2) {
+    display: block;
+}
+
+#carbonads, #fakecb {
+    border: 1px solid #d5d5d5;
+    font-size: 11px;
+    line-height: 15px;
+    overflow: hidden;
+    width: 340px;
+    padding: 20px;
+    margin: auto;
+    height: 142px;
+    border-radius: 2px;
+}
+
+#carbonads .carbon-img {
+    float: left;
+    display: block;
+}
+
+#carbonads .carbon-text, #carbonads .carbon-poweredby {
+    float: left;
+    width: 150px;
+    padding: 0 10px 10px 10px;
+}
+
+#carbonads .carbon-text:hover, #carbonads .carbon-poweredby:hover {
+    text-decoration: none;
+}
+
+#carbonads .carbon-poweredby {
+    color: #9D9D9D;
+}
+
+#shadow .sample {
+    width: 100px;
+    height: 100px;
+    margin: 16px;
+    padding: 16px;
+    display: inline-block;
+}
+
+#shadow-sample2 {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 16px;
+    padding: 16px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+#shadow-sample3 {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 16px;
+    padding: 16px;
+    border-radius: 100px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+#input .inputs {
+    width: 80%;
+}
+
+#slider .sample2 {
+    height: 150px;
+}
+
+.files-list-item {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    cursor: pointer;
+    padding: 0 10px;
+    transition: background-color 0.3s;
+}
+
+.icon {
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+}
+
+.excel-table-head-cell {
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    min-width: 100px;
+}
+
+.excel-table-numeration-cell {
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #ccc;
+    min-width: 40px;
+}
+
+.excel-table-body-cell {
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+.hljs-ln-numbers {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: center;
+    color: #ccc;
+    border-right: 1px solid #ccc;
+    margin-right: 10px;
+    padding: 0 5px 0 0;
+}
+
+.file {
+    font-family: 'Github Sans', sans-serif;
+    font-size: 14px;
+    color: #333;
+    margin-left: 10px;
+    padding: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.hljs-keyword,
+.hljs-title,
+.hljs-string,
+.hljs-literal,
+.hljs-comment,
+.hljs-tag,
+.hljs-name {
+    font-weight: normal;
+}
+
+.file-hash {
+    display: inline;
+}
+
+@media screen and (max-width: 1000px) {
+    .file-hash {
+        display: none;
+    }
+}
+
+h1 {
+    color: #00698f;
+}
+
+h2 {
+    color: #0085b2;
+    margin-top: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f0f0f0;
+}
+
+.request {
+    margin-bottom: 40px;
+}
+
+.parameter {
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.type {
+    color: #666;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+.description {
+    color: #666;
+    font-family: sans-serif;
+}
+
+.request-line {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    padding: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    font-family: sans-serif;
+    font-size: 100%;
+    line-height: 1.15;
+}
+
+.request-line.get {
+    background-color: rgba(92, 184, 92, 0.2);
+    border-color: #5cb85c;
+}
+
+.request-line.post {
+    background-color: rgba(51, 122, 183, 0.2);
+    border-color: #7bb8f7;
+}
+
+.request-line.put {
+    background-color: rgba(240, 173, 78, 0.2);
+    border-color: #fca130;
+}
+
+.request-line.delete {
+    background-color: rgba(217, 83, 79, 0.2);
+    border-color: #fb5c58;
+}
+
+.http-method {
+    display: inline-block;
+    border-radius: 3px;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-right: 8px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+    min-width: 80px;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.http-method.get {
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+.http-method.post {
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+
+.http-method.put {
+    background-color: #fca130;
+    border-color: #f0ad4e;
+}
+
+.http-method.delete {
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+
+#toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#message-container {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    z-index: 1000;
+    padding: 10px;
+    overflow: hidden;
+}
+
+#renamebtn1,
+#uploadbtn1,
+#deletebtn1,
+#copybtn1,
+#pastebtn1,
+#createbtn1 {
+    width: 42px;
+    height: 42px;
+    padding: 0px;
+}
+
+#uploadbtn1 span,
+#deletebtn1 span {
+    margin-left: 10px;
+}
+
+.breadcrumb {
+    background-color: rgba(0, 0, 0, 0);
+    margin: 0px;
+    border-radius: 0px;
+    font-family: 'Github Sans', sans-serif;
+}
+
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#filesul .selected {
+    background-color: #eee;
+    border-radius: 10px;
+}
+
+.file-body {
+    width: 100%;
+    max-height: 66px;
+}
+
+.file-row {
+    min-height: 48px;
+}
+
+.rename-file-input {
+    margin-left: 10px;
+    border-radius: 3px;
+    border: rgb(84,174,255) 2px solid;
+    padding: 0px;
+    width: 100%;
+    font-family: 'Github Sans', sans-serif;
+    font-size: 14px;
+}
+
+/* ========== МОБИЛЬНЫЕ СТИЛИ (ДО 768px) ========== */
+@media screen and (max-width: 768px) {
+    /* Шапка */
+    .header-panel {
+        height: 80px;
+    }
+    .header-panel h1 {
+        font-size: 18px;
+        bottom: 5px;
+        padding-left: 15px;
+    }
+
+    /* Меню навигации */
+    .menu {
+        width: 100%;
+        float: none;
+        height: auto !important;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+    nav.menu {
+        background-color: #fff;
+        border: none;
+        margin-bottom: 0;
+        padding: 0;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+    nav.menu ul {
+        margin: 0;
+        background-color: #fff;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    nav.menu ul li {
+        display: inline-block;
+        float: none;
+        padding: 15px 20px;
+        font-size: 14px;
+        border-bottom: none;
+        box-shadow: none;
+    }
+    nav.menu ul li.active {
+        background-color: transparent;
+        border-bottom: 2px solid #009587;
+    }
+
+    /* Основной контент */
+    .pages {
+        width: 100% !important;
+        position: relative;
+        top: 0;
+        padding: 0 10px;
+        overflow: visible;
+        padding-top: 0;
+    }
+    .pages > div {
+        padding-top: 20px;
+    }
+
+    /* Сброс сетки Bootstrap */
+    .main .row,
+    .pages .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .row {
+        padding: 0 !important;
+    }
+    .col-xs-9, .col-xs-3, .col-xs-10 {
+        width: 100% !important;
+        float: none;
+    }
+    .col-xs-10,
+    .col-xs-9 {
+        padding: 0 !important;
+    }
+    .main [class*="col-"],
+    .pages [class*="col-"] {
+        width: 100%;
+        float: none;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .container-fluid {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .main {
+        padding: 0;
+    }
+
+    /* Блок контента */
+    .well.page.active {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 10px;
+        box-shadow: none;
+        border: none;
+        margin-bottom: 0;
+    }
+
+    /* Панель инструментов */
+    #toolbar {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    .btn-group {
+        overflow-x: auto;
+        white-space: nowrap;
+        display: flex;
+        gap: 4px;
+        padding: 0 5px;
+    }
+    .btn-group .btn {
+        flex: 0 0 auto;
+    }
+    #toolbar .btn {
+        width: 42px;
+        height: 42px;
+        padding: 0;
+        margin-bottom: 5px;
+    }
+
+    /* Навигационная цепочка */
+    .breadcrumb {
+        font-size: 12px;
+        white-space: nowrap;
+        overflow-x: auto;
+        display: flex;
+        flex-wrap: nowrap;
+        width: 100%;
+        padding: 8px 18px;
+    }
+    .breadcrumb li {
+        display: inline-block;
+        float: none;
+    }
+
+    /* Список файлов */
+    .files-list-item {
+        display: flex;
+        align-items: center;
+        padding: 8px 5px;
+        margin-bottom: 5px;
+    }
+    .files-list-item .icon {
+        flex: 0 0 2em;
+        margin-right: 8px;
+    }
+    .files-list-item .file-body,
+    .files-list-item .file,
+    .files-list-item .file-name {
+        flex: 1 1 auto;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-left: 0;
+        padding: 5px 0;
+        font-size: 14px;
+        min-width: 0;
+    }
+    .file-row {
+        min-height: 40px;
+    }
+    .file-body {
+        max-height: 50px;
+    }
+    #filesul {
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    /* Таблицы API */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* Карточка с рекламой */
+    #carbonads, #fakecb {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+    #carbonads .carbon-img {
+        float: none;
+        margin-bottom: 10px;
+    }
+    #carbonads .carbon-text, 
+    #carbonads .carbon-poweredby {
+        width: 100%;
+        float: none;
+        padding: 0;
+    }
+}
+
+.uploads-queue {
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    width: 300px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px 4px 0 0;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    font-size: 12px;
+}
+.uploads-header {
+    padding: 8px 12px;
+    background: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.uploads-list {
+    max-height: 200px;
+    overflow-y: auto;
+}
+.upload-item {
+    padding: 8px 12px;
+    border-bottom: 1px solid #eee;
+}
+.upload-item .filename {
+    font-weight: bold;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.upload-item .progress {
+    height: 8px;
+    margin: 4px 0;
+    background: #f0f0f0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.upload-item .progress-bar {
+    height: 100%;
+    background: #4caf50;
+    width: 0%;
+    transition: width 0.2s;
+}
+.upload-item .status {
+    font-size: 11px;
+    color: #666;
+}
+.upload-item.error .progress-bar {
+    background: #f44336;
+}
+.upload-item.completed .progress-bar {
+    background: #2196f3;
+}

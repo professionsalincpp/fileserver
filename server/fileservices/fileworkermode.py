@@ -12,3 +12,4 @@ class FileWorkerMode(Enum):
     CREATE_FILE = 5,
     LIST_DIR = 6,
     DELETE = 7,
+    RENAME = 8

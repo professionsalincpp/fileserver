@@ -12,6 +12,8 @@ from commands.upload import UploadCommand
 from commands.move import MoveCommand
 from commands.copy import CopyCommand
 from commands.createdir import CreateDirCommand
+from commands.delete import DeleteCommand
+from commands.rename import RenameCommand
 import os
 from config import Config
 from services.file_system.file_viewer import FileViewer
@@ -77,6 +79,15 @@ class Dispatcher:
                 viewer.run()
         self.print_response("read", result)
 
+    def _dispatch_delete(self, args: argparse.Namespace) -> None:
+        if not args.file:
+            _logger.error("No file or directory specified", context="dispatch_delete")
+            return
+        cmd = DeleteCommand(args.file, Config().get_server_url())
+        result = cmd.execute()
+        self.print_response("delete", result)
+        
+
     def _dispatch_move(self, args: argparse.Namespace) -> None:
         if not args.source or not args.dest:
             _logger.error("No source or destination specified", context="dispatch_move")
@@ -117,6 +128,14 @@ class Dispatcher:
         result = cmd.execute()
         self.print_response("download", result)
 
+    def _dispatch_rename(self, args: argparse.Namespace) -> None:
+        if not args.old_path or not args.new_path:
+            _logger.error("No source or destination specified", context="dispatch_rename")
+            return
+        cmd = RenameCommand(args.old_path, args.new_path, Config().get_server_url())
+        result = cmd.execute()
+        self.print_response("rename", result)
+
     def print_response(self, command: str, response: CommandResponse):
         table = [
             ["Command", command],
@@ -135,4 +154,4 @@ class Dispatcher:
             table.append(["Message", data_json["message"]]),
             table.append(["Error Message", data_json["error_message"]])
 
-        print_table(table)
+        print_table(table, adjust_width=True)

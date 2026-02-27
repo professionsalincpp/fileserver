@@ -1,6 +1,6 @@
 import os
 from config import Config
-import utils.path as pathutils
+import utils.pathutils as pathutils
 from .providerresult import ProviderResult
 from .providerstatus import ProviderStatus
 

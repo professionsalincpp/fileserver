@@ -5,6 +5,7 @@ import urllib.parse
 from http.server import BaseHTTPRequestHandler
 from handlers.PUTHandler import PUTHandler
 from handlers.GETHandler import GETHandler
+from handlers.DELETEHandler import DELETEHandler
 from handlers.response import Response
 import json
 from handlers.POSTHandler import POSTHandler
@@ -52,7 +53,6 @@ class FileServerRequestHandler(BaseHTTPRequestHandler):
 
     def log_request(self, code = "-", size = "-"):
         _logger.info(f"{self.requestline}", title="Request", context="request")
-        _logger.info(f"{self.date_time_string()}", title="Time", context="request")
         _logger.info(f"{self.address_string()}", title="Client IP", context="request")
         code_description = {
             200: "OK",
@@ -64,59 +64,40 @@ class FileServerRequestHandler(BaseHTTPRequestHandler):
         }
         _logger.info(f"{code} [{code_description.get(code, 'Unknown')}] {size}", title="Response", context="response")
 
+    def log_error(self, format, *args):
+        if args:
+            _logger.error(format % args, title="Error", context="request")
+        else:
+            _logger.error(format, title="Error", context="request")
+
     def do_GET(self):
         """Serve a GET request."""
         path = self.translate_path()
-        _logger.info(str(path), title="Path", context="request")
+        
         result: Response = GETHandler.processpath(path)
-        byte_like: bytes = result.body
-        for header in result.headers:
-            self.send_header(header, result.headers[header])
-        self.send_response(result.status_code)
-        self.end_headers()
-        self.wfile.write(byte_like)
+        self.send_full_response(result)
 
     def do_POST(self):
         path = self.translate_path()
-        raw_data = self.rfile.read(int(self.headers['Content-Length']))
-        if self.headers['Content-Length'] == 0:
-            data = {}
-        elif self.is_json_exportable(raw_data):
-            data = json.loads(raw_data)
-        else:
-            self.send_response(400)
-            self.end_headers()
-            self.wfile.write(b"Bad JSON data, must be valid JSON object or empty")
-            return
-        result: Response = POSTHandler.processrequest(data, path)
-        byte_like: bytes = result.body
-        for header in result.headers:
-            self.send_header(header, result.headers[header])
-        self.send_response(result.status_code)
-        self.end_headers()
-        self.wfile.write(byte_like)
+        data = self.exract_data()
 
+        result: Response = POSTHandler.processrequest(data, path)
+        self.send_full_response(result)
 
     def do_PUT(self):
         path = self.translate_path()
-        raw_data = self.rfile.read(int(self.headers['Content-Length']))
-        if self.headers['Content-Length'] == 0:
-            data = {}
-        elif self.is_json_exportable(raw_data):
-            data = json.loads(raw_data)
-        else:
-            self.send_response(400)
-            self.end_headers()
-            self.wfile.write(b"Bad JSON data, must be valid JSON object or empty")
-            return
-        result: Response = PUTHandler.processrequest(data, path)
-        byte_like: bytes = result.body
-        for header in result.headers:
-            self.send_header(header, result.headers[header])
-        self.send_response(result.status_code)
-        self.end_headers()
-        self.wfile.write(byte_like)
+        data = self.exract_data()
 
+        result: Response = PUTHandler.processrequest(data, path)
+        self.send_full_response(result)
+
+    def do_DELETE(self):
+        path = self.translate_path()
+        data = self.exract_data()
+        
+        result: Response = DELETEHandler.processrequest(data, path)
+        self.send_full_response(result)
+        
     def is_json_exportable(self, obj):
         try:
             json.loads(obj)
@@ -136,6 +117,8 @@ class FileServerRequestHandler(BaseHTTPRequestHandler):
         """
         # abandon query parameters
         path = self.path.split('?',1)[0]
+        if path[0] == '/':
+            path = path[1:]
         path = path.split('#',1)[0]
         path = path.lstrip('/')
         # Don't use posixpath; it doesn't work on Windows.
@@ -150,3 +133,24 @@ class FileServerRequestHandler(BaseHTTPRequestHandler):
             return args
         else:
             return {}
+        
+    def send_headers(self, headers: dict):
+        for header, value in headers.items():
+            self.send_header(header, value)
+        
+    def send_full_response(self, response: Response):
+        self.send_headers(response.headers)
+        self.send_response(response.status_code)
+        self.end_headers()
+        self.wfile.write(response.body)
+
+    def exract_data(self):
+        raw_data = self.rfile.read(int(self.headers['Content-Length']))
+        if self.headers['Content-Length'] == 0:
+            data = {}
+        elif self.is_json_exportable(raw_data):
+            data = json.loads(raw_data)
+        else:
+            self.send_full_response(Response(b"Bad JSON data, must be valid JSON object or empty", 400))
+            raise Exception("Bad JSON data, must be valid JSON object or empty")
+        return data

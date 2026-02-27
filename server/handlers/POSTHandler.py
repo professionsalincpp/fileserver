@@ -12,7 +12,7 @@ from logservices.logger import MultiLogger
 from config import Config
 from fileservices.fileworker import FileWorker
 from policyservices.policyworker import PolicyWorker
-from utils.path import get_correct_path
+from utils.pathutils import get_correct_path
 from handlers.BaseHandler import BaseHandler
 
 
@@ -93,6 +93,8 @@ class POSTHandler(BaseHandler):
     @classmethod
     def processcreate_dir(cls, body: Dict[str, str]) -> Response:
         filepath = get_correct_path(Config.get_config()["path"]["data"], body["path"])
+        print(body)
+        print(filepath)
         body["path"] = filepath
         
         policyworker = PolicyWorker(Config.get_config()["path"]["data"], body, PolicyWorkerMode.CHECK_CREATE_PERMISSIONS)

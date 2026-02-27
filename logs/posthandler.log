@@ -1,0 +1,15 @@
+posthandler@error-[2025-08-13T11:19:06]:~$ Error: Read permissions check failed
+posthandler@error-[2025-08-13T11:19:06]:~$ Error: Not in allowed dir C:\projects\a.cpp
+posthandler@error-[2025-08-13T11:19:16]:~$ Error: Read permissions check failed
+posthandler@error-[2025-08-13T11:19:16]:~$ Error: Not in allowed dir C:\projects\a.cpp
+posthandler@error-[2025-08-13T12:55:05]:~$ Error: Unknown path
+posthandler@error-[2025-08-13T12:56:13]:~$ Error: Read permissions check failed
+posthandler@error-[2025-08-13T12:56:13]:~$ Error: Not in allowed dir C:\projects\a.cpp
+posthandler@error-[2025-08-13T12:56:18]:~$ Error: Read permissions check failed
+posthandler@error-[2025-08-13T12:56:18]:~$ Error: Not in allowed dir C:\projects\a.cpp
+posthandler@error-[2025-08-13T12:56:30]:~$ Error: Read permissions check failed
+posthandler@error-[2025-08-13T12:56:30]:~$ Error: Not in allowed dir C:\projects\a.cpp
+[2026-02-26T23:56:14] [POSTHANDLER] [ERROR] Error: Read permissions check failed
+[2026-02-26T23:56:14] [POSTHANDLER] [ERROR] Error: Not in allowed dir D:\[Egorenkov,_Fradkov,_Harlamov]_Osnovue_matematiche(libcats.org)-1.pdf
+[2026-02-26T23:57:07] [POSTHANDLER] [ERROR] Error: Read permissions check failed
+[2026-02-26T23:57:07] [POSTHANDLER] [ERROR] Error: Not in allowed dir D:\pysimpler-0.0.8.tar.gz

@@ -53,5 +53,22 @@ basic_structure.endpoints = [
             "path": str,
         },
         parent=APIPath("create")
+    ),
+    APIEndpoint(
+        name="delete",
+        method="DELETE",
+        body_structure={
+            "path": str
+        }
+    ),
+    APIEndpoint(
+        name="rename",
+        method="PUT",
+        body_structure={
+            "path": {
+                "old": str,
+                "new": str
+            }
+        }
     )
 ]

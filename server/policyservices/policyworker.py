@@ -1,5 +1,5 @@
 import pathlib
-from utils.path import get_correct_path
+from utils.pathutils import get_correct_path
 from .policyworkerresult import PolicyWorkerResult
 from .policyworkermode import PolicyWorkerMode
 from .policyworkerstatus import PolicyWorkerStatus
@@ -50,6 +50,17 @@ class PolicyWorker:
         except Exception as e:
             self.write_error(e)
 
+    def _check_delete_permissions(self):
+        try:
+            _path = self.data["path"]
+            if not self.is_path_inside(_path):
+                self.result.status = PolicyWorkerStatus.NOT_IN_ALLOWED_DIR
+                self.result.data.write(f"Not in allowed dir {_path}".encode())
+                return
+            self.result.status = PolicyWorkerStatus.ALLOWED
+        except Exception as e:
+            self.write_error(e)
+
     def _check_copy_permissions(self):
         try:
             _src_path = self.data["path"]["source"]
@@ -88,6 +99,22 @@ class PolicyWorker:
             if not self.is_path_inside(_path):
                 self.result.status = PolicyWorkerStatus.NOT_IN_ALLOWED_DIR
                 self.result.data.write(f"Not in allowed dir {_path}".encode())
+                return
+            self.result.status = PolicyWorkerStatus.ALLOWED
+        except Exception as e:
+            self.write_error(e)
+
+    def _check_rename_permissions(self):
+        try:
+            _src_path = self.data["path"]["old"]
+            _dst_path = self.data["path"]["new"]
+            if not self.is_path_inside(_dst_path):
+                self.result.status = PolicyWorkerStatus.NOT_IN_ALLOWED_DIR
+                self.result.data.write(f"Not in allowed dir {_src_path}".encode())
+                return
+            if not self.is_path_inside(_src_path):
+                self.result.status = PolicyWorkerStatus.NOT_IN_ALLOWED_DIR
+                self.result.data.write(f"Not in allowed dir {_dst_path}".encode())
                 return
             self.result.status = PolicyWorkerStatus.ALLOWED
         except Exception as e:

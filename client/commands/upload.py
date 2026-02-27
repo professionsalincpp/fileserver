@@ -64,16 +64,9 @@ class UploadCommand(Command):
         if not self.data:
             return CommandResponse("File not found", CommandStatusCode.CLIENT_FILE_NOT_FOUND)
         
-        data_hash = hashlib.sha256(self.data).hexdigest()
         mimetype = extendedmimes.guess_mimetype(self.path)
         data = Encoder.decode(self.data, mimetype)
-        slice1 = data[:300]
-        slice2 = self.data[:300]
-        print(f"Actual data: {slice2}")
-        print(f"Decoded data: {slice1}")
-        print(len(slice1))
-        print(len(slice2))
-
+        data_hash = hashlib.sha256(data.encode('utf-8')).hexdigest()
         post_data = {
             'path': os.path.basename(self.path),
             'data': data,

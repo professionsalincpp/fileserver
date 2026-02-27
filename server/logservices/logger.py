@@ -5,7 +5,7 @@ from .format import *
 import os
 from typing import Literal
 from colorama import Fore, Style
-from utils.path import get_correct_path
+from utils.pathutils import get_correct_path
 try:
     from config import Config
 except ImportError:
@@ -46,7 +46,8 @@ class MultiLogger:
         if not os.path.exists(self.extended_file_name):
             with open(self.extended_file_name, 'w') as f:
                 pass
-        self.log_format = Config.get_config()['log']['format']
+        self.log_format = Config.LOG_FORMAT()
+        print(f"Setupped logger {self.name} with format {self.log_format}")
         if self.log_format.lower() == "json":
             self.log_format = LogFormat.JSON
         elif self.log_format.lower() == "linux_terminal" or self.log_format.lower() == "terminal" or self.log_format.lower() == "linux":
@@ -80,7 +81,7 @@ class MultiLogger:
 
     def success(self, message, title="Success", context=None):
         title = f"{Fore.GREEN}{title}{Style.RESET_ALL}"
-        self.log(self.make_message(message, title, context, LogLevel.Success))
+        self.log(message, title, context, LogLevel.Success)
 
     def cleanup_message_for_file(self, message):
         for ansi_color in [Fore.RED, Fore.YELLOW, Fore.GREEN, Fore.WHITE]:
@@ -98,7 +99,8 @@ class MultiLogger:
         if context is None:
             context = self.name
         with open(self.extended_file_name, 'a') as f:
-            f.write(self.make_message(message, title, context, type, False))
+            clean_msg: str = self.cleanup_message_for_file(self.make_message(message, title, context, type, highlight=False))
+            f.write(clean_msg)
 
         sys.stdout.write(self.make_message(message, title, context, type, highlight=True))
         

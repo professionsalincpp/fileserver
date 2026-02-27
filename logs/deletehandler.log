@@ -1,0 +1,25 @@
+deletehandler@error-[2025-08-11T18:32:33]:~$ [31mError[0m: Delete permissions check failed
+deletehandler@error-[2025-08-11T18:33:01]:~$ [31mError[0m: Delete permissions check failed
+deletehandler@error-[2025-08-11T18:33:01]:~$ [31mError[0m: Not in allowed dir a.p
+deletehandler@error-[2025-08-11T18:34:42]:~$ [31mError[0m: Delete permissions check failed
+deletehandler@error-[2025-08-11T18:34:42]:~$ [31mError[0m: Not in allowed dir C:\Users\griuc\Desktop\Https Server\docs
+deletehandler@error-[2025-08-11T18:36:02]:~$ [31mError[0m: Delete permissions check failed
+deletehandler@error-[2025-08-11T18:36:02]:~$ [31mError[0m: Not in allowed dir C:\Users\griuc\Desktop\Https Server\docs
+deletehandler@error-[2025-08-11T18:38:04]:~$ [31mError[0m: Delete permissions check failed
+deletehandler@error-[2025-08-11T18:38:04]:~$ [31mError[0m: Not in allowed dir C:\Users\griuc\Desktop\Https Server\docs
+deletehandler@error-[2025-08-11T18:38:43]:~$ [31mError[0m: Delete permissions check failed
+deletehandler@error-[2025-08-11T18:38:43]:~$ [31mError[0m: Not in allowed dir C:\Users\griuc\Desktop\Https Server\docs
+deletehandler@error-[2025-08-11T18:38:57]:~$ [31mError[0m: Delete permissions check failed
+deletehandler@error-[2025-08-11T18:38:57]:~$ [31mError[0m: Not in allowed dir C:\Users\griuc\Desktop\Https Server\docs
+deletehandler@error-[2025-08-11T18:39:06]:~$ [31mError[0m: Delete permissions check failed
+deletehandler@error-[2025-08-11T18:39:06]:~$ [31mError[0m: Not in allowed dir C:\Users\griuc\Desktop\Https Server\docs
+deletehandler@error-[2025-08-11T18:39:18]:~$ [31mError[0m: Delete permissions check failed
+deletehandler@error-[2025-08-11T18:39:18]:~$ [31mError[0m: Not in allowed dir C:\Users\griuc\Desktop\Https Server\docs
+deletehandler@error-[2025-08-11T18:39:31]:~$ [31mError[0m: Delete permissions check failed
+deletehandler@error-[2025-08-11T18:39:31]:~$ [31mError[0m: Not in allowed dir C:\Users\griuc\Desktop\Https Server\docs
+deletehandler@error-[2025-08-11T18:40:08]:~$ [31mError[0m: Delete permissions check failed
+deletehandler@error-[2025-08-11T18:40:08]:~$ [31mError[0m: Not in allowed dir C:\Users\griuc\Desktop\Https Server\docs
+deletehandler@error-[2025-08-11T18:57:28]:~$ [31mError[0m: Request body is not valid
+deletehandler@error-[2025-08-11T18:58:05]:~$ [31mError[0m: Request body is not valid
+[2026-02-26T23:56:22] [DELETEHANDLER] [ERROR] Error: Delete permissions check failed
+[2026-02-26T23:56:22] [DELETEHANDLER] [ERROR] Error: Not in allowed dir D:\[Egorenkov,_Fradkov,_Harlamov]_Osnovue_matematiche(libcats.org)-1.pdf

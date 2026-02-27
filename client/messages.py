@@ -13,11 +13,14 @@ def print_table(data: list, adjust_width: bool=True) -> None:
             column_width = 0
             for row in range(table_rows):
                 if len(data[row][column]) - get_ansi_escapes_count(data[row][column]) + 2 > column_width:
-                    column_width = len(data[row][column]) - get_ansi_escapes_count(data[row][column]) + 2
+                    column_width = len(data[row][column]) - get_ansi_escapes_count(data[row][column]) + 4
             column_widths.append(column_width)
         column_width = max(column_widths)
     else:
         column_width = width // table_columns
+        for column in range(table_columns):
+            column_widths.append(column_width)
+    width = max(sum(column_widths), width)
     last_cell_pos_x = 0
     column = 0
     print("╭", end="")

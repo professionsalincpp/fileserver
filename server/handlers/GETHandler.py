@@ -1,10 +1,10 @@
 import os
 from config import Config
 from fileservices.fileworkerstatus import FileWorkerStatus
-import utils.path as pathutils
+import utils.pathutils as pathutils
 from typing import List
 from fileservices.fileworker import FileWorker, FileWorkerMode
-from utils.path import get_correct_path
+from utils.pathutils import get_correct_path
 from handlers.BaseHandler import BaseHandler
 from fileservices.nameprovider import NameProvider
 from fileservices.providerresult import ProviderResult
@@ -28,18 +28,12 @@ class GETHandler(BaseHandler):
     
     @classmethod
     def processpage(cls, path: List[str]) -> Response:
-        filepath = "unknown"
-        if path[0] == "" or path[0] == "index":
-            filepath = get_correct_path(Config.get_config()['path']['templates'], "html/index.html")
-        elif path[0] == "viewdir":
-            print(f"Path: {path}")
-            filepath = get_correct_path(Config.get_config()['path']['templates'], "html/viewdir.html")
-        elif path[0] == "viewfile":
-            filepath = get_correct_path(Config.get_config()['path']['templates'], f"html/viewfile.html")
-        elif path[0] in "api":
-            filepath = get_correct_path(Config.get_config()['path']['templates'], f"html/api.html")
-        else:
-            filepath = pathutils.get_correct_path(Config.get_config()['path']['templates'], f"css/bootstrap-material-design-master/{'/'.join(path)}")
+        if len(path) == 1 and path[0] == "":
+            path = ["index.html"]
+        filepath = pathutils.find_in_default_paths(strpath(path))
+        if filepath is None:
+            print("Warning: Page not found")
+            return cls.wrap_error(404, "Not Found", "Not Found")
 
         fileworker = FileWorker(filepath, FileWorkerMode.READ)
         fileworker.run()
@@ -51,9 +45,9 @@ class GETHandler(BaseHandler):
         
     @classmethod
     def processfile(cls, path: List[str]) -> Response:
-        filepath = pathutils.get_absolute_path(os.path.join(Config.get_config()['path']['data'], "/".join(path)),  os.path.dirname(__file__))
+        filepath = pathutils.get_absolute_path(strpath(path), Config.PATH_DATA())
         if os.path.isdir(filepath):
-            resp = "<h1>Index of /</h1><br>"
+            resp = f"<h1>Index of /{'/'.join(path)}</h1><br>"
             for file in os.listdir(filepath):
                 resp += f"<a href=\"/file/{'/'.join(path)}/{file}\">{file}</a><br>"
             
